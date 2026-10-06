@@ -6,6 +6,8 @@ def check_password_strength(password):
 
     if password in common_passwords:
         return "Weak: Password is very common."
+    if not any(char.isdigit() for char in password):
+        return "Weak: Password should contain at least one number."
 
     return "Strong: Password meets all criteria."
 
